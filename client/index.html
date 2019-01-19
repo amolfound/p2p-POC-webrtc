@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>video.js HLS Plugin Example</title>
+
+
+<link href="/js/videojs/video-js.css" rel="stylesheet">
+<script src="//www.chartjs.org/assets/Chart.min.js"></script>
+
+
+</head>
+<body>
+  <div style="float:left" > 
+  <video id="video"
+         class="video-js vjs-default-skin"
+         height="300"
+         width="600"
+         controls>
+    <source
+       src="http://solutions.brightcove.com/jwhisenant/hls/apple/bipbop/bipbopall.m3u8"
+       type="application/x-mpegURL">
+  </video>
+  </div>
+  <script>
+    videojs.options.flash.swf = '/js/videojs/video-js.swf';
+    // initialize the player
+    var player = videojs('video');
+  </script>
+
+</body>
+</html>
