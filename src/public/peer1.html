@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://unpkg.com/video.js@6.2.5/dist/video-js.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js@6.2.1/dist/video.min.js"></script>
+  <script src="https://unpkg.com/videojs-flash@2.0.0/dist/videojs-flash.min.js"></script>
+  <script src="js/video.dev.js"></script>
+  <script src="js/videojs-media-sources.js"></script>
+  <script src="js/videojs.hls.orig.js"></script>
+  <script src="js/peer.js"></script>
+  <script src="js/peer1.js"></script>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <h1> Video fetching </h1>
+
+    <section>
+
+      <button type="button" id = "getFile">Click Me!</button>
+
+      <div style="float:left" > 
+      <video id="video"
+             class="video-js vjs-default-skin"
+             height="300"
+             width="600"
+             controls>
+        <source
+           src="https://localhost:4000/media/output.m3u8"
+           type="application/x-mpegURL">
+      </video>
+      </div>
+
+      <script>
+        videojs.options.flash.swf = 'https://unpkg.com/videojs-swf@5.4.0/dist/video-js.swf' ;
+        // initialize the player
+        var player = videojs('video');
+      </script>
+
+      <div class="progress">
+        <div class="label">Send progress: </div>
+        <progress id="sendProgress" max="0" value="0"></progress>
+      </div>
+
+      <div class="progress">
+        <div class="label">Receive progress: </div>
+        <progress id="receiveProgress" max="0" value="0"></progress>
+      </div>
+
+      <div id="bitrate"></div>
+      <a id="download"></a>
+      <span id="status"></span>
+
+    </section>
+
+    <section>
+      <p>View the console to see logging.</p>
+    </section>
+  </div>
+
+  <script type="text/javascript">
+        pageReady();
+    </script>
+
+</body>
+</html>
