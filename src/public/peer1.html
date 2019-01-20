@@ -19,8 +19,6 @@
 
     <section>
 
-      <button type="button" id = "getFile">Click Me!</button>
-
       <div style="float:left" > 
       <video id="video"
              class="video-js vjs-default-skin"
@@ -38,21 +36,7 @@
         // initialize the player
         var player = videojs('video');
       </script>
-
-      <div class="progress">
-        <div class="label">Send progress: </div>
-        <progress id="sendProgress" max="0" value="0"></progress>
-      </div>
-
-      <div class="progress">
-        <div class="label">Receive progress: </div>
-        <progress id="receiveProgress" max="0" value="0"></progress>
-      </div>
-
-      <div id="bitrate"></div>
-      <a id="download"></a>
-      <span id="status"></span>
-
+      
     </section>
 
     <section>
